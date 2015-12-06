@@ -13,6 +13,6 @@ public class Cat extends Animal {
 
   @Override
   public String toString() {
-    return String.format("%s\t%s\t%b\n", super.toString(), getClass().getName(), Boolean.valueOf(isDeclawed));
+    return String.format("%s\t%s\tIs Declawed: %b\n", super.toString(), getClass().getName(), Boolean.valueOf(isDeclawed));
   }
 }
