@@ -1,19 +1,18 @@
 import java.util.ArrayDeque;
-import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 
 public class QueueDemo {
   public void showOperations() {
-    PriorityQueue<Integer> piq = new PriorityQueue<Integer>();
-    PriorityBlockingQueue<Integer> pbqi = new PriorityBlockingQueue<Integer>();
-    ArrayDeque<Integer> adqi = new ArrayDeque<Integer>();
+    PriorityQueue<Integer> piq = new PriorityQueue<>();
+    PriorityBlockingQueue<Integer> pbqi = new PriorityBlockingQueue<>();
+    ArrayDeque<Integer> adqi = new ArrayDeque<>();
 
     // offer/add
     for (int i = 0; i < 10; i++) {
-      piq.offer(i);
-      pbqi.offer(i * 2);
-      adqi.add(i * 4);
+      piq.offer(Integer.valueOf(i));
+      pbqi.offer(Integer.valueOf(i * 2));
+      adqi.add(Integer.valueOf(i * 4));
     }
 
     // peek/poll

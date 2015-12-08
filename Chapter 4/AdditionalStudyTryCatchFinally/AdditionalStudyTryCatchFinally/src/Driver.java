@@ -44,6 +44,7 @@ public class Driver {
       System.out.println("This is the end of the line");
     }
 
+    input.close();
     System.out.println("Done");
   }
 }

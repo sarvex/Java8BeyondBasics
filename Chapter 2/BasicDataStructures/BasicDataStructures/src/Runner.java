@@ -1,6 +1,6 @@
 /** A runner is an athlete that runs.
  *
- * @author Brian */
+ * @author sarvex */
 public class Runner {
   private int raceID;
   private String name;

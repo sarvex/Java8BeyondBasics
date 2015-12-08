@@ -1,24 +1,25 @@
 import java.util.Collections;
-import java.util.LinkedList;
-import java.util.ListIterator;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
 
 import Utilities.StringGenerator;
 
 public class LinkedListDemo {
   public void showOperations() {
     // Create a new LL Integer
-    LinkedList<Integer> myNumbers = new LinkedList<Integer>();
+    LinkedList<Integer> myNumbers = new LinkedList<>();
     // Create a new LL String
-    LinkedList<String> myStrings = new LinkedList<String>();
+    LinkedList<String> myStrings = new LinkedList<>();
     // Create a new LL Animal
-    LinkedList<Animal> myAnimals = new LinkedList<Animal>();
+    LinkedList<Animal> myAnimals = new LinkedList<>();
 
     // Add 5 of each to each list (Random Strings and junk Animal names)
     int offset = 65;
     // add to the end of the list
     for (int i = 0; i < 5; i++) {
-      Integer nextInt = i * 10;
+      Integer nextInt = Integer.valueOf(i * 10);
       myNumbers.add(nextInt);
     }
     for (int i = 0; i < 5; i++) {
@@ -49,7 +50,7 @@ public class LinkedListDemo {
     }
 
     // insert at index in order
-    myNumbers.add(1, 5);
+    myNumbers.add(1, Integer.valueOf(5));
     myStrings.add(2, StringGenerator.generateRandomString(offset + 5));
     myAnimals.add(4, new Animal(StringGenerator.generateRandomString(offset + 11)));
 
@@ -74,18 +75,18 @@ public class LinkedListDemo {
 
     // JUST USING INTEGERS GOING FORWARD (with a few exceptions) - UNDERSTAND GENERIC TYPE CAN BE ANY TYPE
     // addAll to end
-    LinkedList<Integer> insertMeEnd = new LinkedList();
-    insertMeEnd.add(100);
-    insertMeEnd.add(200);
-    insertMeEnd.add(300);
+    List<Integer> insertMeEnd = new LinkedList<>();
+    insertMeEnd.add(Integer.valueOf(100));
+    insertMeEnd.add(Integer.valueOf(200));
+    insertMeEnd.add(Integer.valueOf(300));
     myNumbers.addAll(insertMeEnd);
 
     // addAll at index
-    LinkedList<Integer> insertMeAtFive = new LinkedList();
-    insertMeAtFive.add(31);
-    insertMeAtFive.add(32);
-    insertMeAtFive.add(33);
-    insertMeAtFive.add(34);
+    List<Integer> insertMeAtFive = new LinkedList<>();
+    insertMeAtFive.add(Integer.valueOf(31));
+    insertMeAtFive.add(Integer.valueOf(32));
+    insertMeAtFive.add(Integer.valueOf(33));
+    insertMeAtFive.add(Integer.valueOf(34));
     myNumbers.addAll(5, insertMeAtFive);
     System.out.println(StringGenerator.stars());
     System.out.println("Numbers:");
@@ -94,38 +95,38 @@ public class LinkedListDemo {
     }
 
     // add first
-    myNumbers.addFirst(-1);
+    myNumbers.addFirst(Integer.valueOf(-1));
     // add last
-    myNumbers.addLast(1000);
+    myNumbers.addLast(Integer.valueOf(1000));
     System.out.println(StringGenerator.stars());
     System.out.println("FIRST: " + myNumbers.getFirst());
     System.out.println("LAST: " + myNumbers.getLast());
 
     // contains
     System.out.println(StringGenerator.stars());
-    System.out.println("My Numbers contains 100? " + myNumbers.contains(100));
-    System.out.println("My Numbers contains 250? " + myNumbers.contains(250));
-    if (myNumbers.contains(1000)) {
-      System.out.println("Index of 1000: " + myNumbers.indexOf(1000));
+    System.out.println("My Numbers contains 100? " + myNumbers.contains(Integer.valueOf(100)));
+    System.out.println("My Numbers contains 250? " + myNumbers.contains(Integer.valueOf(250)));
+    if (myNumbers.contains(Integer.valueOf(1000))) {
+      System.out.println("Index of 1000: " + myNumbers.indexOf(Integer.valueOf(1000)));
     }
-    myNumbers.add(1000);
-    myNumbers.add(1000);
-    myNumbers.add(2000);
-    myNumbers.add(3000);
-    myNumbers.add(4000);
-    myNumbers.add(1000);
-    myNumbers.add(5000);
-    System.out.println("Last Index of 1000: " + myNumbers.lastIndexOf(1000));
+    myNumbers.add(Integer.valueOf(1000));
+    myNumbers.add(Integer.valueOf(1000));
+    myNumbers.add(Integer.valueOf(2000));
+    myNumbers.add(Integer.valueOf(3000));
+    myNumbers.add(Integer.valueOf(4000));
+    myNumbers.add(Integer.valueOf(1000));
+    myNumbers.add(Integer.valueOf(5000));
+    System.out.println("Last Index of 1000: " + myNumbers.lastIndexOf(Integer.valueOf(1000)));
 
     // Contains all
-    LinkedList<Integer> myTestNumbers = new LinkedList<Integer>();
-    myTestNumbers.add(1000);
-    myTestNumbers.add(2000);
-    myTestNumbers.add(3000);
-    myTestNumbers.add(4000);
-    myTestNumbers.add(5000);
+    LinkedList<Integer> myTestNumbers = new LinkedList<>();
+    myTestNumbers.add(Integer.valueOf(1000));
+    myTestNumbers.add(Integer.valueOf(2000));
+    myTestNumbers.add(Integer.valueOf(3000));
+    myTestNumbers.add(Integer.valueOf(4000));
+    myTestNumbers.add(Integer.valueOf(5000));
     System.out.println("Contains all? " + myNumbers.containsAll(myTestNumbers));
-    myTestNumbers.add(25000);
+    myTestNumbers.add(Integer.valueOf(25000));
     System.out.println("Contains all? " + myNumbers.containsAll(myTestNumbers));
 
     // removeFirst
@@ -139,9 +140,9 @@ public class LinkedListDemo {
     }
 
     // remove at lastIndexOf 1000
-    System.out.println(myNumbers.remove(myNumbers.lastIndexOf(1000)));
+    System.out.println(myNumbers.remove(myNumbers.lastIndexOf(Integer.valueOf(1000))));
     // remove at indexOf 2000
-    myNumbers.remove(myNumbers.indexOf(2000));
+    myNumbers.remove(myNumbers.indexOf(Integer.valueOf(2000)));
     System.out.println(StringGenerator.stars());
     System.out.println("Numbers:");
     for (Integer i : myNumbers) {
@@ -242,11 +243,11 @@ public class LinkedListDemo {
     ListIterator<Integer> litrInts = myNumbers.listIterator();
     while (litrInts.hasNext()) {
       Integer x = litrInts.next();
-      litrInts.set(x * 2);
+      litrInts.set(Integer.valueOf(x.intValue() * 2));
     }
     litrInts = myNumbers.listIterator(4);
     litrInts.next();
-    litrInts.add(252525);
+    litrInts.add(Integer.valueOf(252525));
 
     litrInts = myNumbers.listIterator(7);
     litrInts.next();

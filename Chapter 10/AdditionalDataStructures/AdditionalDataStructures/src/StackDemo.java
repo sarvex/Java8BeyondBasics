@@ -8,15 +8,15 @@ import Utilities.StringGenerator;
 public class StackDemo {
   public void showOperations() {
     // Create a new Stack Integer
-    Stack<Integer> myNumbers = new Stack<Integer>();
+    Stack<Integer> myNumbers = new Stack<>();
     populateNumbers(myNumbers);
 
     // Create a new Stack String
-    Stack<String> myStrings = new Stack<String>();
+    Stack<String> myStrings = new Stack<>();
     populateStrings(myStrings);
 
     // Create a new Stack Animal
-    Stack<Animal> myAnimals = new Stack<Animal>();
+    Stack<Animal> myAnimals = new Stack<>();
     populateAnimals(myAnimals);
 
     // print them out
@@ -67,12 +67,12 @@ public class StackDemo {
     // According to the documentation - the more consistent
     // set of LIFO Operations can be created with an
     // ArrayDeque object
-    Deque<Integer> mccLIFO = new ArrayDeque<Integer>();
-    mccLIFO.push(0);
-    mccLIFO.push(10);
-    mccLIFO.push(20);
-    mccLIFO.push(30);
-    mccLIFO.push(40);
+    Deque<Integer> mccLIFO = new ArrayDeque<>();
+    mccLIFO.push(Integer.valueOf(0));
+    mccLIFO.push(Integer.valueOf(10));
+    mccLIFO.push(Integer.valueOf(20));
+    mccLIFO.push(Integer.valueOf(30));
+    mccLIFO.push(Integer.valueOf(40));
     while (mccLIFO.peek() != null) {
       System.out.println(mccLIFO.pop());
     }
@@ -80,7 +80,7 @@ public class StackDemo {
 
   private void populateNumbers(Stack<Integer> ints) {
     for (int i = 0; i < 5; i++) {
-      ints.push(i);
+      ints.push(Integer.valueOf(i));
     }
   }
 
@@ -102,7 +102,7 @@ public class StackDemo {
     // we have to clone the stack
     // if we don't, we'll pop the original out of data
     Stack<E> temp = (Stack<E>) aStack.clone();
-    Stack<E> output = new Stack<E>();
+    Stack<E> output = new Stack<>();
     while (!temp.empty()) {
       output.push(temp.pop());
     }

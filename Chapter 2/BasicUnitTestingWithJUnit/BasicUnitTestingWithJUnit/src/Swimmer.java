@@ -1,6 +1,6 @@
 /** A Swimmer is an athlete that swims.
  *
- * @author Brian */
+ * @author sarvex */
 public class Swimmer {
   private int raceID;
   private String name;

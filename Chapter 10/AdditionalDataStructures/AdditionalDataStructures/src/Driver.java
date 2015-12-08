@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Scanner;
+
 import Utilities.StringGenerator;
 
 public class Driver {
@@ -33,7 +34,12 @@ public class Driver {
       HashMapDemo hmd = new HashMapDemo();
       hmd.showOperations();
       break;
+    default:
+      System.out.println("Invalid Input");
+      break;
     }
+
+    input.close();
   }
 
   public static void printMenu() {

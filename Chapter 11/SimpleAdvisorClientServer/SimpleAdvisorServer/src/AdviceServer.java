@@ -47,7 +47,7 @@ public class AdviceServer implements Runnable
 
 	/**
 	 * Make a thread-enabled implementation to do stuff...
-	 * @author Brian
+	 * @author sarvex
 	 */
 	private class SomeServerImplementation implements Runnable
 	{

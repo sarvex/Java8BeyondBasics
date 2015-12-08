@@ -27,4 +27,9 @@ public class Animal {
       return false;
     return (this.getName().equals(((Animal) o1).getName()));
   }
+
+  @Override
+  public int hashCode() {
+    return super.hashCode();
+  }
 }
